@@ -1,4 +1,4 @@
-//----------------part one-------------------
+    //----------------part one-------------------
     // $("#sendBtn").click(function(){
     //     console.log('clicked!');
     // var httpObject = new XMLHttpRequest();
@@ -9,15 +9,35 @@
     // console.log(httpObject.readyState)
 
     //----------------part two-----------------------
-    $("#sendBtn").click(function(){
-        console.log('clicked!');
-        $.ajax({
-           url:"db/database.txt",
-           method:"GET",
-           success:function(response){
-               console.log('function working test!')
-               $("#responseTxt").text(response);
-           }
-        });
+    // $("#sendBtn").click(function(){
+    //     console.log('clicked!');
+    //     $.ajax({
+    //        url:"db/database.txt",
+    //        method:"GET",
+    //        success:function(response){
+    //            console.log('function working test!')
+    //            $("#responseTxt").text(response);
+    //        }
+    //     });
+    //
+    // });
 
-});
+    // //-------------------part three----------------------
+    // $("#sendBtn").click(function(){
+    //    $.ajax({
+    //       url:"db/database.json",
+    //       method:"GET",
+    //       success:function(response){
+    //           $("#personContainer").empty();
+    //           for(let i =0;i<response.length;i++){
+    //               const person = response[i];
+    //               $("#personContainer").append(
+    //                   `<p>Name:${person.name}</p>
+    //                    <p>Age:${person.age}</p>
+    //                   `
+    //               )
+    //           }
+    //       }
+    //    });
+    // });
+
