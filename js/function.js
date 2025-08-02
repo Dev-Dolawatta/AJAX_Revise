@@ -41,3 +41,21 @@
     //    });
     // });
 
+    //------------------part four---------------
+    $("#sendBtn").click(function(){
+       $.ajax({
+          url:"db/database.json",
+          method:"GET",
+          success:function(response){
+              response.forEach(function(person){
+
+                  let row =`<tr>
+                                    <td>${person.name}</td>
+                                    <td>${person.age}</td>
+                                  </tr>
+                                  `
+                  $("#tBody").append(row);
+              });
+          }
+       });
+    });
