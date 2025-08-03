@@ -42,20 +42,39 @@
     // });
 
     //------------------part four---------------
+    // $("#sendBtn").click(function(){
+    //    $.ajax({
+    //       url:"db/database.json",
+    //       method:"GET",
+    //       success:function(response){
+    //           response.forEach(function(person){
+    //
+    //               let row =`<tr>
+    //                                 <td>${person.name}</td>
+    //                                 <td>${person.age}</td>
+    //                               </tr>
+    //                               `
+    //               $("#tBody").append(row);
+    //           });
+    //       }
+    //    });
+    // });
+    //-----------------part five------------------
     $("#sendBtn").click(function(){
        $.ajax({
-          url:"db/database.json",
-          method:"GET",
+          url:"http://localhost:8080/servletBasics_Web_exploded/customer",
+          method:"POST",
           success:function(response){
-              response.forEach(function(person){
+             for (let i=0;i<response.length;i++){
+                 const person = response[i];
+                 $("#personContainer").append(
+                    `   <p>${person.name}</p>
+                        <p>${person.age}</p>
+                        <p>${person.address}</p>
+                    `
+                 )
+             }
 
-                  let row =`<tr>
-                                    <td>${person.name}</td>
-                                    <td>${person.age}</td>
-                                  </tr>
-                                  `
-                  $("#tBody").append(row);
-              });
           }
        });
     });
